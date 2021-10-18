@@ -57,12 +57,22 @@ echo ""
 echo ""
 echo "##################################################"
 echo "#                                                #"
-echo "# Inserting <?php phpinfo(); ?> inside index.php #"
+echo "# Inserting <?php phpinfo(); ?> inside info.php  #"
 echo "#                                                #"
 echo "##################################################"
 echo ""
 cd /var/www/html/
 echo '<?php phpinfo(); ?>' > info.php
+
+echo ""
+echo ""
+echo "######################################"
+echo "#                                    #"
+echo "# Checking if LAMP stack is running  #"
+echo "#                                    #"
+echo "######################################"
+echo ""
+service httpd status | grep running
 
 echo ""
 echo ""
@@ -133,6 +143,16 @@ GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost IDENTIFIED BY 'he
 FLUSH PRIVILEGES;
 
 mydatabase
+
+echo ""
+echo ""
+echo "###################################"
+echo "#                                 #"
+echo "# Checking if mariadb is running  #"
+echo "#                                 #"
+echo "###################################"
+echo ""
+service mariadb status | grep running
 
 echo ""
 echo ""
